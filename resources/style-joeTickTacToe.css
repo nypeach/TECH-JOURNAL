@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(29, 54, 83);
+
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: rgb(218, 254, 255);
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 4px solid rgb(112, 125, 139);
+  width: 180px;
+  height: 180px;
+  line-height: 100px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 10em;
+  color: rgb(218, 254, 255);
+
+}
+
+.prompt {
+  display: flex;
+  justify-content: center;
+  color: rgb(253, 192, 207);
+}
+
+.resetBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
+  border: 1px solid  rgb(112, 125, 139);
+  border-radius: 3px;
+  color:  rgb(218, 254, 255);
+}
