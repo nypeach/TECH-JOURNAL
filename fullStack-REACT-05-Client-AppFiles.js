@@ -1,3 +1,23 @@
+//==========================================================================================================
+// ROOT INDEX (client/index.js)
+//==========================================================================================================
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+//==========================================================================================================
+// APP.JSX (client/src/components/app.jsx)
+//==========================================================================================================
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
 import React from 'react';
 import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';

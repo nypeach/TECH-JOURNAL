@@ -69,21 +69,21 @@ const models = require('./models'); // Not always used, see ex: line 39
       db.delete()
     });
 
-//=============================================================
-// SERVER PORT AND LISTENING SETUP
+// SERVER PORT AND LISTENING SETUP //=====================================
+  // Sets the port and starts the server listening
 
-  // Arrow function example
-  const port = 3000; // use whatever port
-  app.listen(port, () => {
-    console.log('CRUDdy Todo server is running in the terminal');
-    console.log(`To get started, visit: http://localhost:${port}`);
-  });
+    // Arrow function example
+    const port = 3000; // use whatever port
+    app.listen(port, () => {
+      console.log('CRUDdy Todo server is running in the terminal');
+      console.log(`To get started, visit: http://localhost:${port}`);
+    });
 
-  // Regular function example
-  let port = 1128; // use whatever port
-  app.listen(port, function () {
-    console.log(`listening on port ${port}`);
-  });
+    // Regular function example
+    let port = 1128; // use whatever port
+    app.listen(port, function () {
+      console.log(`listening on port ${port}`);
+    });
 
 
 
