@@ -14,6 +14,8 @@ const models = require('./models'); // Not always used, see ex: line 39
 
 // MIDDLEWARE //==========================================================
   // For every Middleware layer you want to use, add an app.use line
+  // Express.static() finds and returns the static 'client' files requested.
+  // The argument you pass is the name of the directory where they are
   let app = express();
   app.use(morgan('dev')); // Optional
   app.use(bodyParser.json());
@@ -28,7 +30,8 @@ const models = require('./models'); // Not always used, see ex: line 39
 
   // NOTE 2
   app.use(express.static(path.join(__dirname, './public')));
-    // If path is used on line 11 swap line 18 with line 27
+    // If path is used on line 12 swap line 23 with line 32
+    // In this example './public' is the folder where index.html located
 
 
 // RESTFUL ROUTES FOR CRUD OPERATIONS //==================================

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title>Mocha/Chai Basic Tests</title>
+        <style>
+            body {
+                font: 18px/1.5 "Helvetica Neue", Helvetica, sans-serif;
+                padding-left: 20px;
+            }
+        </style>
+        <link href='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css' rel='stylesheet' />
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script src='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js'></script>
+        <script src='https://cdn.rawgit.com/chaijs/chai/2.3.0/chai.js'></script>
+        <script>
+            mocha.setup('bdd');
+            mocha.traceIgnores = ['mocha.min.js', 'chai.min.js'];
+            expect = chai.expect;
+        </script>
+        <script>
+            var Tree = function (value) {
+                this.value = value;
+                this.children = [];
+            };
+            Tree.prototype.addChild = function (tree) {
+                this.children.push(tree);
+            }
+            Tree.prototype.countLeaves = function() {
+                var count = 0;
+                var innerFunc = function(tree) {
+                    if (tree.children.length === 0) {
+                        count += 1;
+                    }
+                    for (var i = 0; i < tree.children.length; i++) {
+                        innerFunc(tree.children[i]);
+                    }
+                }
+                innerFunc(this);
+                return count;
+            }
+        </script>
+        <script>
+            /// HERE ARE THE TESTS
+            describe('Depth First Traversion', function () {
+                it('no nodes', function () {
+                    expect(new Tree().countLeaves()).to.equal(1);
+                });
+                it('one node', function () {
+                    var root = new Tree();
+                    root.addChild(new Tree());
+                    expect(new Tree().countLeaves()).to.equal(1);
+                });
+            });
+            describe('Deeper Nesting', function () {
+                it('3 deep', function () {
+                    var root = new Tree();
+                    root.addChild(new Tree());
+                    root.addChild(new Tree());
+                    root.children[0].addChild(new Tree());
+                    root.children[0].addChild(new Tree());
+                    root.children[0].children[0].addChild(new Tree());
+                    expect(root.countLeaves()).to.equal(3);
+                });
+            });
+            mocha.run();
+        </script>
+    </body>
+</html>
