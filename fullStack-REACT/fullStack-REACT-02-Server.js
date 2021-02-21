@@ -5,12 +5,12 @@
 // IMPORTS //=============================================================
   // This is where we put anything we are importing from other files
   // It can include exported functions, middleware, databases, etc.
-const express = require('express');
-const db = require('../database');
-const morgan = require('morgan'); // Optional
-const bodyParser = require('body-parser');
-const path = require('path'); // See note 2
-const models = require('./models'); // Not always used, see ex: line 39
+  const express = require('express');
+  const db = require('../database');
+  const morgan = require('morgan'); // Optional
+  const bodyParser = require('body-parser');
+  const path = require('path'); // See note 2
+  const models = require('./models'); // Not always used, see ex: line 39
 
 // MIDDLEWARE //==========================================================
   // For every Middleware layer you want to use, add an app.use line
