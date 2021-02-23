@@ -180,7 +180,7 @@ class NewListInput extends React.Component {
       .then((response) => {
         this.setState({ nameValue: '' });
         this.setState({ descriptionValue: '' });
-        this.props.getListItems();
+        this.props.getListItems(); // (SEE NOTE AT BOTTOM OF PAGE)
       }, (error) => {
         console.log(error);
       });
@@ -203,3 +203,36 @@ class NewListInput extends React.Component {
   }
 }
 export default NewItemInput;
+
+//==========================================================================================================
+// SPECIAL NOTES ABOUT PASSING FROM GRANDPARENT TO CHILD
+//==========================================================================================================
+
+  // IN PARENT COMPONENT
+  constructor(props) {
+  super(props);
+  this.getListItems = this.getListItems.bind(this);
+
+  getListItems() {
+    //this function gets list items
+  }
+  <Child
+    getNewItems={this.getListItems} />
+
+  // IN CHILD COMPONENT
+  <GrandChild
+      getNew={props.getNewItems}/>
+
+  // GRANDCHILD COMPONENT
+  handleClick(event) {
+    alert('A new category was submitted: ' + this.state.value);
+    event.preventDefault();
+    axios.post('/api/categories', {
+      name: this.state.value.replace(/'/g, "\\'")
+    })
+      .then((response) => {
+        this.setState({ value: '' });
+        this.props.getNew(); // FINALLY GETS USED HERE
+        console.log(error);
+      });
+  }

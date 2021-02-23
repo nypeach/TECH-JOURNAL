@@ -71,3 +71,13 @@
   select * from <table>
   // delete items from a table
   delete * from <table> where <someColumnName> = "someValueName";
+
+
+  // if you find you get an error message that says Client does not support authentication
+    // protocol requested by server; consider upgrading MySQL client
+
+  // create new mysql user
+CREATE USER 'jodi'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'jodi'@'localhost';
+ALTER USER 'jodi'@'localhost' IDENTIFIED WITH mysql_native_password BY 'minteger';//database name
+flush privileges;
