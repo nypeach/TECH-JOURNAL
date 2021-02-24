@@ -72,7 +72,7 @@
   // By the time the app is deployed, these are no longer needed
 
   "devDependencies": {
-  "@babel/core": "^7.11.6",           // transpiles our ES6 code to  javascript so that it can run anywhere
+  "@babel/core": "^7.11.6",           // transpiles our JSX code to  javascript so that it can run anywhere
   "@babel/preset-env": "^7.11.5",
   "@babel/preset-react": "^7.10.4",
   "babel-loader": "^8.1.0",
@@ -81,3 +81,6 @@
   "webpack": "^4.44.2",               // takes all the code from your app and makes it usable in a browser
   "webpack-cli": "^3.3.12"
 }
+
+// WEBPACK RESOURCE
+// https://www.valentinog.com/blog/webpack/
