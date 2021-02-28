@@ -8,12 +8,12 @@
       // All feature branches are created off the latest code state of a project
       git checkout master
       git fetch origin
-      git reset--hard origin / master
+      git reset --hard origin/master
 
 // 2. Create a new-branch
       // Use a separate branch for each feature or issue you work on.
       // After creating a branch, check it out locally so that any changes you make will be on that branch.
-      git checkout - b new- feature
+      git checkout -b newFeature
 
 //3. Update, add, commit, and push changes
       // On this branch, edit, stage, and commit changes in the usual fashion
@@ -21,12 +21,12 @@
       // Work on the feature and make commits like you would any time you use Git.
       // When ready, push your commits, updating the feature branch on Bitbucket.
       git status
-      git add < some - file >
+      git add //< some - file >
       git commit
 
 //4. Push feature branch to remote
       // It’s a good idea to push the feature branch up to the central repository.
-      git push - u origin new- feature
+      git push -u origin newFeature
 
 //5. Resolve feedback
       // Now teammates comment and approve the pushed commits.
